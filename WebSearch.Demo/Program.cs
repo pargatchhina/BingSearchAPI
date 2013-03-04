@@ -24,12 +24,6 @@ namespace WebSearch.Demo
             List<string> s = new List<string>();
 
             s.Add("Xbox");
-            s.Add("PS3");
-            s.Add("PS4");
-            s.Add("JustEat");
-            s.Add("Neetu");
-            s.Add("Pargat");
-            s.Add("Yuvraj");
 
             BingSearch search                   = new BingSearch(new Uri(ConfigurationManager.AppSettings[CNST_URL]));
             search.Credentials                  = new NetworkCredential(ConfigurationManager.AppSettings[CNST_ACCESSKEY], ConfigurationManager.AppSettings[CNST_ACCESSKEY]);
