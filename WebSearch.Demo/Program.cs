@@ -21,9 +21,9 @@ namespace WebSearch.Demo
 
         static void Main(string[] args)
         {
-            List<string> s = new List<string>();
+            List<string> queries = new List<string>();
 
-            s.Add("Xbox");
+            queries.Add("Xbox");
 
             BingSearch search                   = new BingSearch(new Uri(ConfigurationManager.AppSettings[CNST_URL]));
             search.Credentials                  = new NetworkCredential(ConfigurationManager.AppSettings[CNST_ACCESSKEY], ConfigurationManager.AppSettings[CNST_ACCESSKEY]);
@@ -31,7 +31,7 @@ namespace WebSearch.Demo
             search.QuerySearchCompletedAsync    += search_QuerySearchCompletedAsync;
             search.QuerySearchExceptionAsync    += search_QuerySearchExceptionAsync;
 
-            search.ExecuteAsync(null);
+            search.ExecuteAsync(queries);
 
             Console.ReadLine();
         }
