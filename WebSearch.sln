@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSearch.BL", "WebSearch.BL\WebSearch.BL.csproj", "{D384E7C9-EC09-430B-BFB8-4C3E80E4DF87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSearch.Tests", "WebSearch.Tests\WebSearch.Tests.csproj", "{3A52AC3C-A37D-4BD1-A463-26ACC1E4D0A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSearch.Demo", "WebSearch.Demo\WebSearch.Demo.csproj", "{F0476C84-B972-47E4-826C-98C58E129774}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D384E7C9-EC09-430B-BFB8-4C3E80E4DF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D384E7C9-EC09-430B-BFB8-4C3E80E4DF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D384E7C9-EC09-430B-BFB8-4C3E80E4DF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D384E7C9-EC09-430B-BFB8-4C3E80E4DF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A52AC3C-A37D-4BD1-A463-26ACC1E4D0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A52AC3C-A37D-4BD1-A463-26ACC1E4D0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A52AC3C-A37D-4BD1-A463-26ACC1E4D0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A52AC3C-A37D-4BD1-A463-26ACC1E4D0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0476C84-B972-47E4-826C-98C58E129774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0476C84-B972-47E4-826C-98C58E129774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0476C84-B972-47E4-826C-98C58E129774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0476C84-B972-47E4-826C-98C58E129774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
