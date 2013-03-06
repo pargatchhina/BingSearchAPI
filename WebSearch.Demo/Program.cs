@@ -1,52 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using WebSearch.BL.Classes;
 
 namespace WebSearch.Demo
 {
-    class Program
+    internal class Program
     {
         #region Constants
 
-        static string CNST_URL          = "Bing.Url";
-        static string CNST_ACCESSKEY    = "Bing.AccessKey";
+        private const string CnstUrl        = "Bing.Url";
+        private const string CnstAccesskey  = "Bing.AccessKey";
 
         #endregion
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            List<string> queries = new List<string>();
+            var s = new List<string> {"Xbox"};
 
-            queries.Add("Xbox");
+            var search = new BingSearch(new Uri(ConfigurationManager.AppSettings[CnstUrl]))
+                {
+                    Credentials = new NetworkCredential(ConfigurationManager.AppSettings[CnstAccesskey],
+                                                        ConfigurationManager.AppSettings[CnstAccesskey])
+                };
 
-            BingSearch search                   = new BingSearch(new Uri(ConfigurationManager.AppSettings[CNST_URL]));
-            search.Credentials                  = new NetworkCredential(ConfigurationManager.AppSettings[CNST_ACCESSKEY], ConfigurationManager.AppSettings[CNST_ACCESSKEY]);
+            search.QuerySearchCompletedAsync += search_QuerySearchCompletedAsync;
+            search.QuerySearchExceptionAsync += search_QuerySearchExceptionAsync;
 
-            search.QuerySearchCompletedAsync    += search_QuerySearchCompletedAsync;
-            search.QuerySearchExceptionAsync    += search_QuerySearchExceptionAsync;
-
-            search.ExecuteAsync(queries);
+            search.ExecuteAsync(null);
 
             Console.ReadLine();
         }
 
-        static void search_QuerySearchExceptionAsync(object sender, QuerySearchExceptionArgs e)
+        private static void search_QuerySearchExceptionAsync(object sender, QuerySearchExceptionArgs e)
         {
             SearchedQuery results = e.SearchedQuery;
             Console.WriteLine("Query: {0}, Exception: {1}", results.Query, results.Exception.Message);
         }
 
-        static void search_QuerySearchCompletedAsync(object sender, QuerySearchCompletedArgs e)
+        private static void search_QuerySearchCompletedAsync(object sender, QuerySearchCompletedArgs e)
         {
             SearchedQuery results = e.SearchedQuery;
 
-            foreach (var result in results.Result)
+            foreach (QueryResult result in results.Result)
             {
                 Console.WriteLine("Query: {0}, GUID: {1}, WebTotal: {2}", results.Query, result.ID, result.WebTotal);
             }

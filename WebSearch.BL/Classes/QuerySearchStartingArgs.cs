@@ -4,8 +4,6 @@ namespace WebSearch.BL.Classes
 {
     public class QuerySearchStartingArgs : EventArgs
     {
-        public QueryToSearch QueryToSearch { get; private set; }
-
         public QuerySearchStartingArgs(QueryToSearch queryToSearch)
         {
             if (queryToSearch == null)
@@ -13,5 +11,7 @@ namespace WebSearch.BL.Classes
 
             QueryToSearch = queryToSearch;
         }
+
+        public QueryToSearch QueryToSearch { get; private set; }
     }
 }

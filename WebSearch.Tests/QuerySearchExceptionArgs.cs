@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebSearch.BL.Classes;
 
 namespace WebSearch.Tests
@@ -10,9 +9,9 @@ namespace WebSearch.Tests
         [TestMethod]
         public void Cunstructor_Empty()
         {
-            SearchedQuery query = new SearchedQuery("test");
+            var query = new SearchedQuery("test");
 
-            QuerySearchExceptionArgs args = new QuerySearchExceptionArgs(query);
+            var args = new QuerySearchExceptionArgs(query);
 
             Assert.AreSame(query, args.SearchedQuery);
         }

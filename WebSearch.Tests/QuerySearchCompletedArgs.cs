@@ -8,20 +8,19 @@ namespace WebSearch.Tests
     public class QuerySearchCompletedArgsTest
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof (ArgumentNullException))]
         public void Constructor_NullArg()
         {
             new QuerySearchCompletedArgs(null);
         }
-        
+
         [TestMethod]
         public void Constructor_ValidArg_SetsPublicProperty()
         {
-            SearchedQuery page          = new SearchedQuery("xbox");
-            QuerySearchCompletedArgs args = new QuerySearchCompletedArgs(page);
+            var page = new SearchedQuery("xbox");
+            var args = new QuerySearchCompletedArgs(page);
 
             Assert.AreSame(page, args.SearchedQuery);
         }
-
     }
 }
